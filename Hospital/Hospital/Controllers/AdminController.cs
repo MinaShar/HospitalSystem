@@ -13,19 +13,6 @@ namespace Hospital.Controllers
         // GET: Admin
         public ActionResult Index()
         {
-            //////////////////for testing only <must be removed>////////////
-            if(Session["AdminID"] == null)
-            {
-                if(Request["ID"] == null)
-                {
-                    Session["AdminID"] = 18;
-                }
-                else
-                {
-                    Session["AdminID"] = int.Parse(Request["ID"].ToString());
-                }
-            }
-            ////////////////////////////////////////////////////////////////
             return View();
         }
 
