@@ -26,7 +26,6 @@ namespace Hospital.Controllers
             }
             else
             {
-                Session["PatientID"] = "08978978653643";
 
                 string patientID = Session["PatientID"].ToString();
                 ViewData["PatientID"] = patientID;
