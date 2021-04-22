@@ -1,0 +1,151 @@
+﻿@using System.Data;
+@{
+    Layout = null;
+
+    DataTable dt = (DataTable)ViewData["Fields"];
+}
+
+
+<div class="form-container" style="position:absolute;">
+
+    <h2>Create new user.</h2>
+
+    <form class="AddNewUSerFrm">
+        <div class="form-group">
+            <label for="email">First Name:</label>
+            <input type="text" autocomplete="off" name="fname" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label for="email">Last Name:</label>
+            <input type="text" autocomplete="off" name="lname" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label for="email">Password:</label>
+            <input type="text" autocomplete="off" name="password" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label for="password" class="cols-sm-2 control-label">Role</label>
+            <div class="cols-sm-10" style="margin-left:54px;">
+                <div class="input-group role-selecter">
+
+                    <label class="radio-inline">
+                        <input type="radio" name="role" value="1">Admin
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="role" value="2">Staff
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="role" value="3">Operator
+                    </label>
+
+                </div>
+            </div>
+        </div>
+
+        <div style="display:none;" class="form-group">
+            <label for="confirm" class="cols-sm-2 control-label">Field</label>
+            <div class="cols-sm-10">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                    <select class="form-control" name="field_id">
+
+                        @foreach (DataRow R in dt.Rows)
+                        {
+                            <option value="@R["ID"]">@R["Name"]</option>
+                        }
+
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <a href="#" type="button" class="btn btn-primary btn-lg btn-block login-button">Save</a>
+        </div>
+    </form>
+
+
+
+</div>
+
+
+@*<div>
+    <div class="row main">
+        <div class="main-login main-center">
+            <label for="name" class="cols-sm-2 control-label">Add new user.</label>
+            <form class="AddNewUSerFrm">
+
+                <div class="form-group">
+                    <label for="name" class="cols-sm-2 control-label">First Name</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                            <input type="text" class="form-control" name="fname" placeholder="First Name" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="cols-sm-2 control-label">Last Name</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                            <input type="text" class="form-control" name="lname" placeholder="Last Name" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="username" class="cols-sm-2 control-label">Password</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+                            <input type="text" class="form-control" name="password" placeholder="Password" />
+                            <input type="image" class="generateBtn" style="position:absolute;" src="~/Images/round_arrow.png" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="cols-sm-2 control-label">Role</label>
+                    <div class="cols-sm-10" style="margin-left:54px;">
+                        <div class="input-group role-selecter">
+
+                            <label class="radio-inline">
+                                <input type="radio" name="role" value="1">Admin
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="role" value="2">Staff
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="role" value="3">Operator
+                            </label>
+
+                        </div>
+                    </div>
+                </div>
+                <div style="display:none;" class="form-group">
+                    <label for="confirm" class="cols-sm-2 control-label">Field</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                            <select class="form-control" name="field_id">
+
+                                @foreach(DataRow R in dt.Rows)
+                                {
+                                    <option value="@R["ID"]">@R["Name"]</option>
+                                }
+
+                            </select>
+                            @*<input type="password" class="form-control" name="confirm" id="confirm" placeholder="Confirm your Password" />*@
+@*</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <a href="#" type="button" class="btn btn-primary btn-lg btn-block login-button">Save</a>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>*@

@@ -1,0 +1,45 @@
+﻿@using System.Data;
+@{ 
+    DataRow Row = (DataRow)ViewData["Row"];
+}
+<div class="row">
+
+    <div class="col-md-9 col-lg-9" style="z-index:0;">
+        <table class="table table-user-information" id="visit_@Row["VisitID"]">
+            <tbody>
+                <tr>
+                    <td>Symptoms:</td>
+                    <td>@Row["Symptoms"]</td>
+                </tr>
+                <tr>
+                    <td>Prescriped:</td>
+                    <td>@Row["Prescriped"]</td>
+                </tr>
+                <tr>
+                    <td>Notes:</td>
+                    <td>@Row["Notes"]</td>
+                </tr>
+
+                <tr>
+                    <td>Image:</td>
+                    <td class="visit-image-description-container">
+                        <img src="~/Images/Human-body.jpg" style="z-index: -1;position: absolute;width:500px;" />
+                        <img class="visit-image-description" style="width:500px;" src="~/Images/@Row["Image"]" />
+                    </td>
+                </tr>
+
+                @*<tr>
+                    <td>Add new visit</td>
+                    <td>
+                        <button id="AddNewVisitBtn" style="padding:2px;border:1px solid rgb(152, 202, 62);">
+                            <span class="" style="color: rgb(152, 202, 62);">Add new visit</span>
+                        </button>
+                    </td>
+                </tr>*@
+
+            </tbody>
+        </table>
+
+
+    </div>
+</div>

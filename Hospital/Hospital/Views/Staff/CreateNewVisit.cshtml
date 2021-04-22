@@ -1,0 +1,50 @@
+﻿
+@{
+    Layout = null;
+}
+
+<div style="margin-left: -25px;margin-top: 111px;" class="container">
+    <div class="row">
+        <form id="AddNewVisitFrm" class="form-horizontal">
+            <fieldset>
+                <!-- Address form -->
+
+                <h2>New Visit</h2>
+
+                <input type="hidden" name="PatientID" value="" />
+
+                <!-- full-name input-->
+                <div class="control-group">
+                    <label class="control-label">Symptoms</label>
+                    <div class="controls">
+                        <textarea style="width:880px;height:170px;" name="symptoms" class="form-control" rows="5"></textarea>
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+                <!-- address-line1 input-->
+                <div class="control-group">
+                    <label class="control-label">Prescribed</label>
+                    <div class="controls">
+                        <textarea style="width:880px;height:170px;" name="prescribed" class="form-control" rows="5"></textarea>
+                    </div>
+                </div>
+                
+                <!-- postal-code input-->
+                <div class="control-group">
+                    <label class="control-label">Notes</label>
+                    <div class="controls">
+                        <textarea style="width:1200px;height:170px;" name="notes" class="form-control" rows="5"></textarea>
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+
+                <div id="canvasDiv">
+                    <img style="width: 500px;float: right;position: fixed;left: 1260px;top: 100px;border: solid;z-index:-5;" src="~/Images/Human-body.jpg" />
+                </div>
+            </fieldset>
+
+            <button type="button" id="create-new-visit-btn" class="btn btn-primary">Create</button>
+
+        </form>
+    </div>
+</div>

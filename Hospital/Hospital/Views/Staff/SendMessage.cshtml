@@ -1,0 +1,40 @@
+﻿@using System.Data;
+
+@{ 
+    DataRow R = (DataRow)ViewData["Row"];
+    int SessionID = int.Parse(ViewData["SessionID"].ToString());
+}
+
+
+@if (SessionID == int.Parse(R["FromID"].ToString()))
+{
+    <div class="row msg_container base_sent" data-chatid="@R["ChatID"]">
+        <div class="col-md-10 col-xs-10">
+            <div class="messages msg_sent">
+                <p>
+                    @R["Statement"]
+                </p>
+                <time datetime="2009-11-13T20:00">@R["Time"]</time>
+            </div>
+        </div>
+        <div class="col-md-2 col-xs-2 avatar">
+            <img src="http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg" class=" img-responsive ">
+        </div>
+    </div>
+}
+else
+{
+    <div class="row msg_container base_receive" data-chatid="@R["ChatID"]">
+        <div class="col-md-2 col-xs-2 avatar">
+            <img src="http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg" class=" img-responsive ">
+        </div>
+        <div class="col-md-10 col-xs-10">
+            <div class="messages msg_receive">
+                <p>
+                    @R["Statement"]
+                </p>
+                <time datetime="2009-11-13T20:00">@R["Time"]</time>
+            </div>
+        </div>
+    </div>
+}

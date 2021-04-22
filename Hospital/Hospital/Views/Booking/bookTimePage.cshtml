@@ -1,0 +1,45 @@
+﻿@using System.Data;
+@{
+    Layout = null;
+    int rowCounter = 0;
+    DataTable dt = (DataTable)ViewData["AllDoctors"];
+    int TotalNumberOfRowsInTable = (int)Math.Ceiling(dt.Rows.Count / 3.0);
+}
+
+<h2>Select Staff to book:</h2>
+
+<table style="margin-left:100px;">
+
+    @for (int i = 0; i < TotalNumberOfRowsInTable; i++)
+    {
+        <tr>
+
+            @for (int j = i * 3; j < dt.Rows.Count; j++)
+            {
+                <td>
+
+                    <div class="card" data-staffid="@dt.Rows[j]["ID"].ToString()">
+                        <img src="~/Images/@dt.Rows[j]["Image"].ToString()" alt="John" style="width:100%">
+                        <h1>@dt.Rows[j]["Name"].ToString()</h1>
+                        <p class="title">@dt.Rows[j]["FieldName"].ToString()</p>
+                        <p>Harvard University</p>
+
+                        <p><button style="width:100%;">Book</button></p>
+                    </div>
+
+                </td>
+
+                if(rowCounter == 2)
+                {
+                    rowCounter = 0;
+                    break;
+                }
+
+                rowCounter+= 1;
+
+            }
+
+        </tr>
+    }
+
+</table>

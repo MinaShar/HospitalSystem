@@ -1,0 +1,86 @@
+﻿/* CONCERNING THE CONFIRM MESSAGE */
+.MessageContainer {
+  margin: 0;
+  z-index:1002;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.MessageContainer .dialogue {
+  font-family: "Helvetica",
+  sans-serif;
+  width: 422px;
+  background: #e7e7e7;
+  border-radius: 5px;
+  box-shadow: 0px 15px 25px 0px rgba(50, 50, 50, 0.7);
+}
+.MessageContainer .titlebar {
+  width: 100%;
+  height: 22px;
+  background-color: #fff;
+  background: -webkit-linear-gradient(top, #e6e6e6, #c4c4c4);
+  background: linear-gradient(top, #e6e6e6, #c4c4c4);
+  border-radius: 5px 5px 0 0;
+  border-bottom: 1px solid #9e9e9e;
+}
+.MessageContainer .icon {
+  width: 60px;
+  position: absolute;
+  left: 25px;
+  top: 25px;
+}
+.MessageContainer .warning {
+  margin-left: 108px;
+  font-size: 0.8em;
+  font-weight: 700;
+}
+.MessageContainer .hint {
+  margin-top: 8px;
+  margin-left: 108px;
+  font-size: 0.75em;
+}
+.MessageContainer .actions {
+  float: right;
+  padding: 15px;
+}
+.MessageContainer .btn {
+  width: 80px;
+  margin: 0 5px;
+}
+.MessageContainer .btn.confirm {
+  color: #fff;
+  background: -webkit-linear-gradient(top, #6cb3fa, #067dff);
+  background: linear-gradient(top, #6cb3fa, #067dff);
+  border-width: 0;
+  border-radius: 3px;
+}
+.MessageContainer .btn.confirm:active {
+  background: #067dff;
+}
+/* /CONCERNING THE CONFIRM MESSAGE/ */
+
+/* DEACTIVATE BACKGROUND */
+#deactivateBackground {
+    position: fixed;
+    z-index: 1000;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .4s, visibility .4s;
+}
+
+#deactivateBackground.active{
+    opacity:1;
+    visibility:visible;
+}
+/*-----------------------*/

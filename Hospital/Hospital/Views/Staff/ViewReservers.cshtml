@@ -1,0 +1,43 @@
+﻿@using System.Data;
+@{
+    Layout = null;
+    DataTable dt = (DataTable)ViewData["Reservers"];
+}
+
+<h2>Reservers</h2>
+
+<table class="ViewReservers">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Birthdate</th>
+        <th>Gender</th>
+        <th>Job</th>
+    </tr>
+
+    @foreach (DataRow R in dt.Rows)
+    {
+        <tr>
+            <td>@R["ID"]</td>
+            <td>@R["Name"]</td>
+            <td>@R["Birthdate"].ToString().Split(' ')[0]</td>
+            @if (R["IsMale"].ToString() == "1")
+            {
+                <td>Male</td>
+            }
+            else
+            {
+                <td>Female</td>
+            }
+            <td>@R["Jop"]</td>
+        </tr>
+    }
+
+</table>
+
+<div style="float:right;margin-top:20px;" class="ReturnBackBtn">
+    <a href="javascript:void(0);" style="list-style-type:none;display:inline;">
+        <img src="~/Images/back.png" style="width:30px;display:inline;margin-bottom:5px;" />
+        <div style="display:inline;"> Return </div>
+    </a>
+</div>

@@ -1,0 +1,41 @@
+﻿@{
+    Layout = null;
+    List<Object> dates = (List<Object>)ViewData["dates"];
+}
+
+<h1>Please pick week.</h1>
+
+
+<table>
+
+    <tr>
+
+        @for (int i = 0; i < dates.Count; i++)
+        {
+            dynamic obj = dates[i];
+
+            var startInfo = obj.GetType().GetProperty("start");
+            var endInfo = obj.GetType().GetProperty("end");
+            var weekidInfo = obj.GetType().GetProperty("id");
+            var start = startInfo.GetValue(obj, null);
+            var end = endInfo.GetValue(obj, null);
+            var weekid = weekidInfo.GetValue(obj, null);
+
+            <td>
+
+                <div class="card" data-weekid="@weekid.ToString()" style="text-align:center;">
+                    <div>
+
+                        <p>Week</p>
+
+                        <h4>from:<br /> @String.Format("{0}", start.ToString().Split(' ')[0]) </h4>
+                        <h4>to: <br /> @String.Format("{0}", end.ToString().Split(' ')[0]) </h4>
+                        
+                    </div>
+                </div>
+
+            </td>
+        }
+    </tr>
+
+</table>

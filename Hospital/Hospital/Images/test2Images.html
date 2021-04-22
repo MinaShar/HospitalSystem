@@ -1,0 +1,49 @@
+<html>
+<head>
+
+<script>
+function convertImageToCanvas(image) {
+	var canvas = document.createElement("canvas");
+	canvas.width = image.width;
+	canvas.height = image.height;
+	canvas.getContext("2d").drawImage(image, 0, 0);
+	
+	image.outerHTML = "";
+	delete image;
+
+	return canvas;
+}
+</script>
+<style>
+#HumanBody{
+    z-index: -1;
+    position: absolute;
+    top: 200px;
+    width: 309px;
+    left: 200px;
+}
+canvas{
+    z-index: 0;
+    width: 309px;
+    height: 307px;
+    position: absolute;
+    left: 200px;
+    top: 200px;
+}
+</style>
+</head>
+
+<body>
+<h1>Test page</h1>
+<div id="div1">
+<img id="HumanBody" src="Human-body.jpg" />
+<img id="TheImage" src="1-25-2018- 105107- AM.png" />
+</div>
+
+</body>
+
+<script>
+var Canvas=convertImageToCanvas(document.getElementById("TheImage"));
+document.getElementById("div1").appendChild(Canvas);
+</script>
+</html>

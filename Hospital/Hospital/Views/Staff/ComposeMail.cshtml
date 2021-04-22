@@ -1,0 +1,32 @@
+﻿@{
+    Layout = null;
+}
+
+<form id="composeMailStaff" style="position: absolute;bottom:0px;right:80px;background: #eee;">
+
+    <div class="container" style="width:700px;">
+
+        <button style="width:0%;color:black;margin-right:18px !important;background-color: transparent;font-size: 31px;padding: 0px;margin: 0px;" class="close" aria-label="Close" type="button" data-dismiss="modal">
+            <span aria-hidden="true">×</span>
+        </button>
+
+        <input type="text" autocomplete="off" placeholder="Patinet id" name="patient_id" required>
+
+
+        <input autocomplete="off" style="margin-left:0px;" type="text" placeholder="Title" name="title" required>
+
+        <textarea name="message" id="MessageTxt" rows="8"></textarea>
+
+        <div class="FilesToUploadContainer">
+            <ul style="list-style-type:none"></ul>
+        </div>
+
+        <label for="file-input" style="float:right;">
+            <img class="AttachFilesBtn" style="width:50px;" src="~/Images/attach.png" />
+        </label>
+
+        <input id="file-input" name="files" type="file" multiple style="display:none;" />
+
+        <button type="submit">Send</button>
+    </div>
+</form>

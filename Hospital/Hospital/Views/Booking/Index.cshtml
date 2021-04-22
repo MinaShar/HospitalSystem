@@ -1,0 +1,74 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Welcome</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link href="~/Content/MailViewerContainer.css" rel="stylesheet" />
+
+    <link href="~/Content/ConfirmationMessageBooking.css" rel="stylesheet" />
+
+    <link href="~/Content/ComposeMailPatients.css" rel="stylesheet" />
+
+    <link href="~/Content/SystemMailPatients.css" rel="stylesheet" />
+
+    <link href="~/Content/PeriodsTable.css" rel="stylesheet" />
+
+    <link href="~/Content/bookTimePage.css" rel="stylesheet" />
+
+    <link href="~/Content/BookingSideBar.css" rel="stylesheet" />
+
+    <script src="~/Scripts/SystemMailPatients.js"></script>
+
+    <script src="~/Scripts/BookingIndex.js"></script>
+
+</head>
+<body>
+    <main>
+        <div class="container">
+            @*<div class="row">*@
+            @*<div class="col s12 m9 l10">*@
+            <div class="section scrollspy" id="structure">
+                <ul class="side-nav" id="slide-out" style="transform: translateX(0px);">
+                    <li>
+                        <div class="user-view">
+                            <div class="background">
+                                <img src="~/Images/header2.jpg" style="max-height:100%;">
+                            </div>
+                            <a href="#!user"><img class="circle" src=""></a>
+                            <a href="#!name"><span class="white-text name">@ViewData["Name"].ToString()</span></a>
+                            <a href="#!email"><span class="white-text email">@ViewData["PatientID"].ToString()</span></a>
+                        </div>
+                    </li>
+                    <li><a href="#" class="menuitem" data-sidemenu="booktime">Book a time</a></li>
+                    <li><a href="#" class="menuitem" data-sidemenu="reminder">Reminder</a></li>
+                    <li><a href="#" class="menuitem" data-sidemenu="systemmail">System mail</a></li>
+                    <li><div class="divider"></div></li>
+                    <li><a class="subheader">Privacy</a></li>
+                    <li><a href="/Booking/LogOut">Log out</a></li>
+                </ul>
+            </div>
+
+           <div class="main-content"></div>
+
+            <div id="ForTestingIssues"></div>
+        </div>
+        @*</div>*@
+        @*</div>*@
+    </main>
+
+    @Html.Partial("_ModalsAndMessages")
+</body>
+</html>

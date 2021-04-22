@@ -1,0 +1,28 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<div class="form-container" style="position:absolute;">
+
+    <form>
+        <div class="form-group">
+            <label for="email">Patient ID:</label>
+            <input type="text" autocomplete="off" name="patientid" class="form-control">
+        </div>
+
+        <div class="form-group error-message" style="display:none;">
+            <label style="color:red;font-weight:bolder;">This ID is not found!</label>
+        </div>
+        @*<div class="form-group">
+            <label for="pwd">Password:</label>
+            <input type="password" class="form-control" id="pwd">
+        </div>*@
+        @*<div class="checkbox">
+            <label><input type="checkbox"> Remember me</label>
+        </div>*@
+        <input type="submit" class="btn btn-default" style="float:right;" value="Search">
+    </form> 
+
+</div>

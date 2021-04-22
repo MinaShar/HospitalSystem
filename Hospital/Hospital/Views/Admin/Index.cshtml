@@ -1,0 +1,93 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+
+    <script src="~/Scripts/CreatePatientAccount.js"></script>
+
+    <script src="~/Scripts/Piechart.js"></script>
+    <script src="~/Scripts/BarLine.js"></script>
+
+    <link href="~/Content/AdminIndex.css" rel="stylesheet" />
+    <script src="~/Scripts/AdminIndex.js"></script>
+
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <nav class="navbar navbar-default sidebar" role="navigation" style="box-shadow:0px 2px 4px 0px rgba(0,0,0,0.16), 0px 2px 10px 0px rgba(0,0,0,0.12) !important;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;background-color:#eee !important;">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-sidebar-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a class="sidelink" href="#">Home<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
+                    @*<li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Usuarios <span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a>
+                            <ul class="dropdown-menu forAnimate" role="menu">
+                                <li><a href="#">Crear</a></li>
+                                <li><a href="#">Modificar</a></li>
+                                <li><a href="#">Reportar</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">Informes</a></li>
+                            </ul>
+                        </li>*@
+                    <li><a class="sidelink" data-link="createpatientaccount" href="#">Create patient account<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-th-list"></span></a></li>
+                    <li><a class="sidelink" data-link="addnewuser" href="#">Add new user<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-tags"></span></a></li>
+                    <li><a class="sidelink" data-link="currentworks" href="#">Current works<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-th-list"></span></a></li>
+                    <li><a class="sidelink" data-link="currentworksinbarline" href="#">Current works in bar line<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-th-list"></span></a></li>
+                    <li><a href="/Admin/LogOut">Log out<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-th-list"></span></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mycontainer"></div>
+
+    @Html.Partial("_ModalsAndMessages")
+
+    <div id="ForTestingIssues"></div>
+
+    <img src="~/Images/loading.gif" style="position: absolute;display: none;margin-left: 600px;margin-top: 100px;z-index: 100;width: 100px;z-index: 10;left: 326px;top: 178px;" id="LoadingImage" />
+
+    <div class="MessageContainer" style="position: fixed;left: 740px;top: 200px;display:none;">
+        <div class="dialogue">
+            <div class="titlebar"></div>
+            <div class="body" style="height:114px;">
+                <img class="icon" src="http://cnet4.cbsistatic.com/hub/i/r/2013/02/04/5e54fcb6-6de8-11e3-913e-14feb5ca9861/resize/270xauto/5dc66f7513da9d66450373bebbe2fe42/ProblemReporterIconX.png" />
+                <div class="warning">successfully</div>
+                <div class="hint">Congratulations the new record added successfully.</div>
+                <div class="actions">
+                    @*<input class="btn" type="button" value="Cancel" />*@
+                    <input class="btn confirm" type="button" value="Confirm" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>

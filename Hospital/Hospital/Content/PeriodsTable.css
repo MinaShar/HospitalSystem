@@ -1,0 +1,27 @@
+﻿.table-header, .table-data {
+    margin: 0;
+    text-align: center;
+    border-collapse: collapse;
+    outline: 1px solid #e3e3e3;
+}
+
+.table-data {
+    padding: 5px 10px;
+    height:100px;
+}
+
+.table-header {
+    background: #666;
+    color: white;
+    padding: 5px 10px;
+}
+
+.table-data:hover {
+    cursor: pointer;
+    background: #666;
+    color: white;
+}
+
+.table > tbody > tr > td{
+    border-bottom:1px solid #ddd;
+}

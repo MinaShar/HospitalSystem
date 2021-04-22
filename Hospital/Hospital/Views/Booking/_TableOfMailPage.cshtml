@@ -1,0 +1,148 @@
+﻿@using System.Data;
+@{
+    DataTable dt = (DataTable)ViewData["Messages"];
+}
+<div>
+    <form name="usersForm" id="usersForm">
+        <table class="data mailingTable" id="tableuserrights" style="width:100%;">
+            <thead>
+                <tr>
+                    <th style="width:20px;overflow:hidden;"></th>
+                    <th style="width:115px;overflow:hidden;">Doctor Name</th>
+                    <th style="width:150px;overflow:hidden;">Title</th>
+                    <th style="width:1200px;overflow:hidden;">Message</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    if (i % 2 == 0)
+                    {
+                        <tr data-mailid="@dt.Rows[i]["MailID"]" style="white-space:nowrap;box-shadow:0px 2px 2px 0px rgba(0,0,0,0.16), 0px 0px 0px 1px rgba(0,0,0,0.08);cursor:pointer;" class="even">
+                            <td><input name="selected_usr[]" class="checkall" id="checkbox_sel_users_2" type="checkbox" value="&amp;amp;#27;localhost"></td>
+                            <td><label>@dt.Rows[i]["StaffName"]</label></td>
+                            <td>@dt.Rows[i]["Title"]</td>
+                            <td>@dt.Rows[i]["Message"]</td>
+                        </tr>
+                    }
+                    else
+                    {
+                        <tr data-mailid="@dt.Rows[i]["MailID"]" style="white-space:nowrap;box-shadow:0px 2px 2px 0px rgba(0,0,0,0.16), 0px 0px 0px 1px rgba(0,0,0,0.08);cursor:pointer;" class="odd">
+                            <td><input name="selected_usr[]" class="checkall" id="checkbox_sel_users_1" type="checkbox" value="&amp;amp;#27;%"></td>
+                            <td><label>@dt.Rows[i]["StaffName"]</label></td>
+                            <td>@dt.Rows[i]["Title"]</td>
+                            <td>@dt.Rows[i]["Message"]</td>
+                        </tr>
+                    }
+                }
+
+                @*<tr class="odd">
+                    <td><input name="selected_usr[]" class="checkall" id="checkbox_sel_users_1" type="checkbox" value="&amp;amp;#27;%"></td>
+                    <td><label for="checkbox_sel_users_1"><span style="color: #FF0000">Any</span></label></td>
+                    <td>%</td>
+                    <td><span style="color: #FF0000">No</span></td>
+                    <td>
+                        <code>
+                            USAGE
+                        </code>
+                    </td>
+                    <td class="usrGroup"></td>
+                    <td>No</td>
+                    <td class="center"><a class="edit_user_anchor" href="server_privileges.php?username=&amp;hostname=%25&amp;dbname=&amp;tablename=&amp;token=c8ca6f4af18230f3f24de3b2fd7381ab"><span class="nowrap"><img title="Edit privileges" class="icon ic_b_usredit" alt="Edit privileges" src="themes/dot.gif">&nbsp;Edit privileges</span></a></td>
+                    <td class="center"><a class="export_user_anchor ajax" href="server_privileges.php?username=&amp;hostname=%25&amp;initial=&amp;export=1&amp;token=c8ca6f4af18230f3f24de3b2fd7381ab"><span class="nowrap"><img title="Export" class="icon ic_b_tblexport" alt="Export" src="themes/dot.gif">&nbsp;Export</span></a></td>
+                </tr>
+                <tr class="even">
+                    <td><input name="selected_usr[]" class="checkall" id="checkbox_sel_users_2" type="checkbox" value="&amp;amp;#27;localhost"></td>
+                    <td><label for="checkbox_sel_users_2"><span style="color: #FF0000">Any</span></label></td>
+                    <td>localhost</td>
+                    <td><span style="color: #FF0000">No</span></td>
+                    <td>
+                        <code>
+                            <dfn title="No privileges.">USAGE</dfn>
+                        </code>
+                    </td>
+                    <td class="usrGroup"></td>
+                    <td>No</td>
+                    <td class="center"><a class="edit_user_anchor" href="server_privileges.php?username=&amp;hostname=localhost&amp;dbname=&amp;tablename=&amp;token=c8ca6f4af18230f3f24de3b2fd7381ab"><span class="nowrap"><img title="Edit privileges" class="icon ic_b_usredit" alt="Edit privileges" src="themes/dot.gif">&nbsp;Edit privileges</span></a></td>
+                    <td class="center"><a class="export_user_anchor ajax" href="server_privileges.php?username=&amp;hostname=localhost&amp;initial=&amp;export=1&amp;token=c8ca6f4af18230f3f24de3b2fd7381ab"><span class="nowrap"><img title="Export" class="icon ic_b_tblexport" alt="Export" src="themes/dot.gif">&nbsp;Export</span></a></td>
+                </tr>
+                <tr class="odd">
+                    <td><input name="selected_usr[]" class="checkall" id="checkbox_sel_users_3" type="checkbox" value="pma&amp;amp;#27;localhost"></td>
+                    <td><label for="checkbox_sel_users_3">pma</label></td>
+                    <td>localhost</td>
+                    <td><span style="color: #FF0000">No</span></td>
+                    <td>
+                        <code>
+                            <dfn title="No privileges.">USAGE</dfn>
+                        </code>
+                    </td>
+                    <td class="usrGroup"></td>
+                    <td>No</td>
+                    <td class="center"><a class="edit_user_anchor" href="server_privileges.php?username=pma&amp;hostname=localhost&amp;dbname=&amp;tablename=&amp;token=c8ca6f4af18230f3f24de3b2fd7381ab"><span class="nowrap"><img title="Edit privileges" class="icon ic_b_usredit" alt="Edit privileges" src="themes/dot.gif">&nbsp;Edit privileges</span></a></td>
+                    <td class="center"><a class="export_user_anchor ajax" href="server_privileges.php?username=pma&amp;hostname=localhost&amp;initial=&amp;export=1&amp;token=c8ca6f4af18230f3f24de3b2fd7381ab"><span class="nowrap"><img title="Export" class="icon ic_b_tblexport" alt="Export" src="themes/dot.gif">&nbsp;Export</span></a></td>
+                </tr>
+                <tr class="even">
+                    <td><input name="selected_usr[]" class="checkall" id="checkbox_sel_users_4" type="checkbox" value="pma_test_user&amp;amp;#27;pma_test_host"></td>
+                    <td><label for="checkbox_sel_users_4">pma_test_user</label></td>
+                    <td>pma_test_host</td>
+                    <td><span style="color: #FF0000">No</span></td>
+                    <td>
+                        <code>
+                            USAGE
+                        </code>
+                    </td>
+                    <td class="usrGroup"></td>
+                    <td>No</td>
+                    <td class="center"><a class="edit_user_anchor" href="server_privileges.php?username=pma_test_user&amp;hostname=pma_test_host&amp;dbname=&amp;tablename=&amp;token=c8ca6f4af18230f3f24de3b2fd7381ab"><span class="nowrap"><img title="Edit privileges" class="icon ic_b_usredit" alt="Edit privileges" src="themes/dot.gif">&nbsp;Edit privileges</span></a></td>
+                    <td class="center"><a class="export_user_anchor ajax" href="server_privileges.php?username=pma_test_user&amp;hostname=pma_test_host&amp;initial=&amp;export=1&amp;token=c8ca6f4af18230f3f24de3b2fd7381ab"><span class="nowrap"><img title="Export" class="icon ic_b_tblexport" alt="Export" src="themes/dot.gif">&nbsp;Export</span></a></td>
+                </tr>
+                <tr class="odd">
+                    <td><input name="selected_usr[]" class="checkall" id="checkbox_sel_users_5" type="checkbox" value="root&amp;amp;#27;127.0.0.1"></td>
+                    <td><label for="checkbox_sel_users_5">root</label></td>
+                    <td>127.0.0.1</td>
+                    <td><span style="color: #FF0000">No</span></td>
+                    <td>
+                        <code>
+                            <dfn title="Includes all privileges except GRANT.">ALL PRIVILEGES</dfn>
+                        </code>
+                    </td>
+                    <td class="usrGroup"></td>
+                    <td>Yes</td>
+                    <td class="center"><a class="edit_user_anchor" href="server_privileges.php?username=root&amp;hostname=127.0.0.1&amp;dbname=&amp;tablename=&amp;token=c8ca6f4af18230f3f24de3b2fd7381ab"><span class="nowrap"><img title="Edit privileges" class="icon ic_b_usredit" alt="Edit privileges" src="themes/dot.gif">&nbsp;Edit privileges</span></a></td>
+                    <td class="center"><a class="export_user_anchor ajax" href="server_privileges.php?username=root&amp;hostname=127.0.0.1&amp;initial=&amp;export=1&amp;token=c8ca6f4af18230f3f24de3b2fd7381ab"><span class="nowrap"><img title="Export" class="icon ic_b_tblexport" alt="Export" src="themes/dot.gif">&nbsp;Export</span></a></td>
+                </tr>
+                <tr class="even">
+                    <td><input name="selected_usr[]" class="checkall" id="checkbox_sel_users_6" type="checkbox" value="root&amp;amp;#27;::1"></td>
+                    <td><label for="checkbox_sel_users_6">root</label></td>
+                    <td>::1</td>
+                    <td><span style="color: #FF0000">No</span></td>
+                    <td>
+                        <code>
+                            <dfn title="Includes all privileges except GRANT.">ALL PRIVILEGES</dfn>
+                        </code>
+                    </td>
+                    <td class="usrGroup"></td>
+                    <td>Yes</td>
+                    <td class="center"><a class="edit_user_anchor" href="server_privileges.php?username=root&amp;hostname=%3A%3A1&amp;dbname=&amp;tablename=&amp;token=c8ca6f4af18230f3f24de3b2fd7381ab"><span class="nowrap"><img title="Edit privileges" class="icon ic_b_usredit" alt="Edit privileges" src="themes/dot.gif">&nbsp;Edit privileges</span></a></td>
+                    <td class="center"><a class="export_user_anchor ajax" href="server_privileges.php?username=root&amp;hostname=%3A%3A1&amp;initial=&amp;export=1&amp;token=c8ca6f4af18230f3f24de3b2fd7381ab"><span class="nowrap"><img title="Export" class="icon ic_b_tblexport" alt="Export" src="themes/dot.gif">&nbsp;Export</span></a></td>
+                </tr>
+                <tr class="odd">
+                    <td><input name="selected_usr[]" class="checkall" id="checkbox_sel_users_7" type="checkbox" value="root&amp;amp;#27;localhost"></td>
+                    <td><label for="checkbox_sel_users_7">root</label></td>
+                    <td>localhost</td>
+                    <td><span style="color: #FF0000">No</span></td>
+                    <td>
+                        <code>
+                            <dfn title="Includes all privileges except GRANT.">ALL PRIVILEGES</dfn>
+                        </code>
+                    </td>
+                    <td class="usrGroup"></td>
+                    <td>Yes</td>
+                    <td class="center"><a class="edit_user_anchor" href="server_privileges.php?username=root&amp;hostname=localhost&amp;dbname=&amp;tablename=&amp;token=c8ca6f4af18230f3f24de3b2fd7381ab"><span class="nowrap"><img title="Edit privileges" class="icon ic_b_usredit" alt="Edit privileges" src="themes/dot.gif">&nbsp;Edit privileges</span></a></td>
+                    <td class="center"><a class="export_user_anchor ajax" href="server_privileges.php?username=root&amp;hostname=localhost&amp;initial=&amp;export=1&amp;token=c8ca6f4af18230f3f24de3b2fd7381ab"><span class="nowrap"><img title="Export" class="icon ic_b_tblexport" alt="Export" src="themes/dot.gif">&nbsp;Export</span></a></td>
+                </tr>*@
+            </tbody>
+        </table>
+    </form>
+</div>

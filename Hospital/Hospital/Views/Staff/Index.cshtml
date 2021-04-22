@@ -1,0 +1,204 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link href="~/Content/ViewReservers.css" rel="stylesheet" />
+
+    <script src="~/Scripts/CheckBookings.js"></script>
+
+    <link href="~/Content/CreateNewPatient.css" rel="stylesheet" />
+
+    <link href="~/Content/MailViewerContainer.css" rel="stylesheet" />
+
+    <link href="~/Content/ComposeMailStaff.css" rel="stylesheet" />
+
+    <script src="~/Scripts/SystemMail.js"></script>
+    <link href="~/Content/SystemMail.css" rel="stylesheet" />
+
+    <link href="~/Content/bootstrap-datepicker.css" rel="stylesheet" />
+
+    <link href="~/Content/StaffProfile.css" rel="stylesheet" />
+
+    <script src="~/Scripts/PeriodsTable.js"></script>
+
+    <script src="~/Scripts/bootstrap-datepicker.js"></script>
+
+    <link href="~/Content/StaffIndex.css" rel="stylesheet" />
+
+    <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+
+    <script src="~/Scripts/StaffIndex.js"></script>
+
+    <link href="~/Content/PeriodsTable.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div class="row">
+        <!-- uncomment code for absolute positioning tweek see top comment in css -->
+        <!-- <div class="absolute-wrapper"> </div> -->
+        <!-- Menu -->
+        <div class="side-menu" style="z-index:100;background:-webkit-linear-gradient(top, #ffffff, #dcdcdc);left:0px;">
+
+            <nav class="navbar navbar-default" role="navigation">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header" style="-webkit-border-radius: 5px;border: 1px solid #ccc;">
+                    <div class="brand-wrapper">
+                        <!-- Hamburger -->
+                        <button type="button" class="navbar-toggle">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <!-- Brand -->
+                        <div class="brand-name-wrapper">
+                            <a class="navbar-brand" href="#">
+                                Brand
+                            </a>
+                        </div>
+                        <!-- Search -->
+                        <a data-toggle="collapse" style="margin-top:1px;" href="#search" class="btn btn-default" id="search-trigger">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </a>
+                        <!-- Search body -->
+                        <div id="search" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <form id="SearchFrm" class="navbar-form" role="search">
+                                    <div class="form-group">
+                                        <input type="text" name="ChatSearchInput" class="form-control" placeholder="Search">
+                                    </div>
+                                    @*<button type="submit" class="btn btn-default "><span class="glyphicon glyphicon-ok"></span></button>*@
+                                </form>
+                                <div id="ChatSearchResults"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Main Menu -->
+                <div class="side-menu-container">
+                    <ul class="nav navbar-nav" style="-webkit-border-radius:10px;border:1px solid #ccc;">
+                        <li class="active SideMenuOption" data-sideitem="createpatient"><a href="#"><span class="glyphicon glyphicon-send"></span> Add new patient</a></li>
+                        <li class="active SideMenuOption" data-sideitem="createvisit"><a href="#"><span class="glyphicon glyphicon-plane"></span>Create visit</a></li>
+                        <li class="active SideMenuOption" data-sideitem="booktime"><a href="#"><span class="glyphicon glyphicon-cloud"></span>Book your times</a></li>
+                        <li class="active SideMenuOption" data-sideitem="systemmail"><a href="#"><span class="glyphicon glyphicon-cloud"></span>System Mail</a></li>
+                        <!-- Dropdown-->
+                        @*<li class="panel panel-default active SideMenuOption" id="dropdown">
+                            <a data-toggle="collapse" href="#dropdown-lvl1">
+                                <span class="glyphicon glyphicon-user"></span> Sub Level <span class="caret"></span>
+                            </a>
+                            <!-- Dropdown level 1 -->
+                            <div id="dropdown-lvl1" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <ul class="nav navbar-nav">
+                                        <li><a href="#">Link</a></li>
+                                        <li><a href="#">Link</a></li>
+                                        <li><a href="#">Link</a></li>
+                                        <!-- Dropdown level 2 -->
+                                        <li class="panel panel-default" id="dropdown">
+                                            <a data-toggle="collapse" href="#dropdown-lvl2">
+                                                <span class="glyphicon glyphicon-off"></span> Sub Level <span class="caret"></span>
+                                            </a>
+                                            <div id="dropdown-lvl2" class="panel-collapse collapse">
+                                                <div class="panel-body">
+                                                    <ul class="nav navbar-nav">
+                                                        <li><a href="#">Link</a></li>
+                                                        <li><a href="#">Link</a></li>
+                                                        <li><a href="#">Link</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>*@
+                        <li class="active SideMenuOption" data-sideitem="manageprofile"><a href="#"><span class="glyphicon glyphicon-signal"></span>Manage your Profile</a></li>
+                        <li class="active SideMenuOption" data-sideitem="checkbookings"><a href="#"><span class="glyphicon glyphicon-send"></span>Check bookings</a></li>
+                        <li class="active" data-sideitem="manageprofile"><a href="/Staff/LogOut"><span class="glyphicon glyphicon-signal"></span>Log out</a></li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </nav>
+
+        </div>
+        <!-- Main Content -->
+        <div class="container-fluid col-sm-9">
+            <div class="side-body">
+                
+            </div>
+            <div class="ChatBoxContainer" style="z-index:101;padding-left:250px;"></div>
+        </div>
+
+
+        <img src="~/Images/loading.gif" style="position: absolute;display: none;margin-left: 600px;margin-top: 100px;z-index: 100;width: 100px;z-index: 10;left: 326px;top: 178px;" id="LoadingImage" />
+
+        <div id="ForTestingIssues"></div>
+
+        @*<div class="col-sm-3">
+            <div class="list-group" style="border-radius: 5px; border: solid; border-image: none; left: 1505px; width: 300px; height: 100%; position: fixed;">
+                <span class="list-group-item active" href="#">
+                    Chat
+                    <span class="pull-right" id="slide-submenu">
+                        <i class="fa fa-times"></i>
+                    </span>
+                </span>
+                <a class="list-group-item" href="#">
+                    <i class="fa fa-comment-o"></i> Lorem ipsum
+                </a>
+                <a class="list-group-item" href="#">
+                    <i class="fa fa-search"></i> Lorem ipsum
+                </a>
+                <a class="list-group-item" href="#">
+                    <i class="fa fa-user"></i> Lorem ipsum
+                </a>
+                <a class="list-group-item" href="#">
+                    <i class="fa fa-folder-open-o"></i> Lorem ipsum <span class="badge">14</span>
+                </a>
+                <a class="list-group-item" href="#">
+                    <i class="fa fa-bar-chart-o"></i> Lorem ipsumr <span class="badge">14</span>
+                </a>
+                <a class="list-group-item" href="#">
+                    <i class="fa fa-envelope"></i> Lorem ipsum
+                </a>
+                <input class="form-control" style="bottom: 0px; position: absolute;" type="text" placeholder="Chat">
+            </div>
+        </div>*@
+
+        @Html.Partial("_Modals")
+
+
+        <div class="MessageContainer" style="position: fixed;left: 740px;top: 200px;display:none;z-index:101;">
+            <div class="dialogue">
+                <div class="titlebar"></div>
+                <div class="body" style="height:114px;">
+                    <img class="icon" src="http://cnet4.cbsistatic.com/hub/i/r/2013/02/04/5e54fcb6-6de8-11e3-913e-14feb5ca9861/resize/270xauto/5dc66f7513da9d66450373bebbe2fe42/ProblemReporterIconX.png" />
+                    <div class="warning">successfully</div>
+                    <div class="hint">Congratulations the new record added successfully.</div>
+                    <div class="actions">
+                        @*<input class="btn" type="button" value="Cancel" />*@
+                        <input class="btn confirm" type="button" value="Confirm" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

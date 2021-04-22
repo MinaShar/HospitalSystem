@@ -1,0 +1,459 @@
+﻿body, html {
+    height: 100%;
+}
+
+.navbar.navbar-default{
+    z-index:10;
+}
+
+nav.sidebar, .main {
+    -webkit-transition: margin 200ms ease-out;
+    -moz-transition: margin 200ms ease-out;
+    -o-transition: margin 200ms ease-out;
+    transition: margin 200ms ease-out;
+}
+
+.main {
+    padding: 10px 10px 0 10px;
+}
+
+@media (min-width: 765px) {
+
+    .main {
+        position: absolute;
+        width: calc(100% - 40px);
+        margin-left: 40px;
+        float: right;
+    }
+
+    nav.sidebar:hover + .main {
+        margin-left: 200px;
+    }
+
+    nav.sidebar.navbar.sidebar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
+        margin-left: 0px;
+    }
+
+    nav.sidebar .navbar-brand, nav.sidebar .navbar-header {
+        text-align: center;
+        width: 100%;
+        margin-left: 0px;
+    }
+
+    nav.sidebar a {
+        padding-right: 13px;
+    }
+
+    nav.sidebar .navbar-nav > li:first-child {
+        border-top: 1px #e5e5e5 solid;
+    }
+
+    nav.sidebar .navbar-nav > li {
+        border-bottom: 1px #e5e5e5 solid;
+    }
+
+    nav.sidebar .navbar-nav .open .dropdown-menu {
+        position: static;
+        float: none;
+        width: auto;
+        margin-top: 0;
+        background-color: transparent;
+        border: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    nav.sidebar .navbar-collapse, nav.sidebar .container-fluid {
+        padding: 0 0px 0 0px;
+    }
+
+    .navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
+        color: #777;
+    }
+
+    nav.sidebar {
+        width: 250px;
+        height: 100%;
+        margin-left: -160px;
+        float: left;
+        margin-bottom: 0px;
+    }
+
+        nav.sidebar li {
+            width: 100%;
+        }
+
+        nav.sidebar:hover {
+            margin-left: 0px;
+        }
+
+    .forAnimate {
+        opacity: 0;
+    }
+}
+
+@media (min-width: 1330px) {
+
+    .main {
+        width: calc(100% - 200px);
+        margin-left: 200px;
+    }
+
+    nav.sidebar {
+        margin-left: 0px;
+        float: left;
+    }
+
+        nav.sidebar .forAnimate {
+            opacity: 1;
+        }
+}
+
+nav.sidebar .navbar-nav .open .dropdown-menu > li > a:hover, nav.sidebar .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #CCC;
+    background-color: transparent;
+}
+
+nav:hover .forAnimate {
+    opacity: 1;
+}
+
+section {
+    padding-left: 15px;
+}
+
+.navbar-default {
+    background-color: #EEE !important;
+}
+
+.nav.navbar-nav > li:hover {
+    background: #CCC;
+}
+
+.nav.navbar-nav li.active {
+    background: #CCC !important;
+}
+
+/* for current works table */
+.single {
+    padding: 30px 15px;
+    margin-top: 40px;
+    background: #fcfcfc;
+    border: 1px solid #f0f0f0;
+}
+
+    .single h3.side-title {
+        margin: 0;
+        margin-bottom: 10px;
+        padding: 0;
+        font-size: 20px;
+        color: #333;
+        text-transform: uppercase;
+    }
+
+        .single h3.side-title:after {
+            content: '';
+            width: 60px;
+            height: 1px;
+            background: #ff173c;
+            display: block;
+            margin-top: 6px;
+        }
+
+    .single ul {
+        margin-bottom: 0;
+    }
+
+    .single li a {
+        color: #666;
+        font-size: 14px;
+        text-transform: uppercase;
+        border-bottom: 1px solid #f0f0f0;
+        line-height: 40px;
+        display: block;
+        text-decoration: none;
+    }
+
+        .single li a:hover {
+            color: #ff173c;
+        }
+
+    .single li:last-child a {
+        border-bottom: 0;
+    }
+/* end for current works table */
+
+
+/* Add new user frm */
+/*
+/* Created by Filipe Pina
+ * Specific styles of signin, register, component
+ */
+/*
+ * General styles
+ */
+#playground-container {
+    height: 500px;
+    overflow: hidden !important;
+    -webkit-overflow-scrolling: touch;
+}
+
+.main {
+    margin: 50px 15px;
+}
+
+h1.title {
+    font-size: 50px;
+    font-family: 'Passion One', cursive;
+    font-weight: 400;
+}
+
+hr {
+    width: 10%;
+    color: #fff;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    margin-bottom: 15px;
+}
+
+input,
+input::-webkit-input-placeholder {
+    font-size: 11px;
+    padding-top: 3px;
+}
+
+.main-login {
+    background-color: #fff;
+    /* shadows and rounded borders */
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.form-control {
+    height: auto !important;
+    padding: 8px 12px !important;
+}
+
+.input-group {
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.21) !important;
+    -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.21) !important;
+    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.21) !important;
+}
+
+#button {
+    border: 1px solid #ccc;
+    margin-top: 28px;
+    padding: 6px 12px;
+    color: #666;
+    text-shadow: 0 1px #fff;
+    cursor: pointer;
+    -moz-border-radius: 3px 3px;
+    -webkit-border-radius: 3px 3px;
+    border-radius: 3px 3px;
+    -moz-box-shadow: 0 1px #fff inset, 0 1px #ddd;
+    -webkit-box-shadow: 0 1px #fff inset, 0 1px #ddd;
+    box-shadow: 0 1px #fff inset, 0 1px #ddd;
+    background: #f5f5f5;
+    background: -moz-linear-gradient(top, #f5f5f5 0%, #eeeeee 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f5f5f5), color-stop(100%, #eeeeee));
+    background: -webkit-linear-gradient(top, #f5f5f5 0%, #eeeeee 100%);
+    background: -o-linear-gradient(top, #f5f5f5 0%, #eeeeee 100%);
+    background: -ms-linear-gradient(top, #f5f5f5 0%, #eeeeee 100%);
+    background: linear-gradient(top, #f5f5f5 0%, #eeeeee 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f5f5f5', endColorstr='#eeeeee', GradientType=0);
+}
+
+.main-center {
+    margin-top: 30px;
+    margin: 0 auto;
+    max-width: 400px;
+    padding: 10px 40px;
+    background: #009edf;
+    color: #FFF;
+    text-shadow: none;
+    -webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);
+    -moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);
+    box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);
+}
+
+span.input-group-addon i {
+    color: #009edf;
+    font-size: 17px;
+}
+
+.login-button {
+    margin-top: 5px;
+}
+
+.login-register {
+    font-size: 11px;
+    text-align: center;
+}
+
+/* end add new user frm */
+
+.generateBtn{
+    position: absolute;
+    width: 25px;
+    left: 288px;
+    z-index: 10;
+}
+
+.generateBtn:hover{
+    background-color:#CCC;
+}
+
+/* confirm message */
+.MessageContainer {
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.dialogue {
+  font-family: "Helvetica",
+  sans-serif;
+  width: 422px;
+  background: #e7e7e7;
+  border-radius: 5px;
+  box-shadow: 0px 15px 25px 0px rgba(50, 50, 50, 0.7);
+}
+.titlebar {
+  width: 100%;
+  height: 22px;
+  background-color: #fff;
+  background: -webkit-linear-gradient(top, #e6e6e6, #c4c4c4);
+  background: linear-gradient(top, #e6e6e6, #c4c4c4);
+  border-radius: 5px 5px 0 0;
+  border-bottom: 1px solid #9e9e9e;
+}
+.body {
+  position: relative;
+  padding: 12px;  
+}
+.icon {
+  width: 60px;
+  position: absolute;
+  left: 25px;
+  top: 25px;
+}
+.warning {
+  margin-left: 108px;
+  font-size: 0.8em;
+  font-weight: 700;
+}
+.hint {
+  margin-top: 8px;
+  margin-left: 108px;
+  font-size: 0.75em;
+}
+.actions {
+  float: right;
+  padding: 15px;
+}
+.btn {
+  width: 80px;
+  margin: 0 5px;
+}
+.btn.confirm {
+  color: #fff;
+  background: -webkit-linear-gradient(top, #6cb3fa, #067dff);
+  background: linear-gradient(top, #6cb3fa, #067dff);
+  border-width: 0;
+  border-radius: 3px;
+}
+.btn.confirm:active {
+  background: #067dff;
+}
+/* end confirm message */
+
+/* forms containers*/
+.form-container{
+    background-color: #f1f1f1;
+    padding: 0.01em 16px;
+    margin: 20px 0;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.16), 0px 2px 10px 0px rgba(0,0,0,0.12) !important;
+    position: absolute;
+    left: 290px;
+    width: 1482px;
+    padding: 50px;
+}
+
+/*----------------*/
+
+
+
+/* concerning the form that generate passwords for patients */
+
+form.example input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 89%;
+  background: #f1f1f1;
+}
+
+/* Style the submit button */
+form.example button {
+  float: left;
+  width: 11%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none; /* Prevent double borders */
+  cursor: pointer;
+}
+
+form.example button:hover {
+  background: #0b7dda;
+}
+
+/* Clear floats */
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* concerning the form that generate passwords for patients */
+
+/* cover layer to deacivate background*/
+#deactivateBackground {
+    position: fixed;
+    z-index: 11;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .4s, visibility .4s;
+}
+
+#deactivateBackground.active{
+    opacity:1;
+    visibility:visible;
+}
+
+/* cover layer to deacivate background*/
+
+

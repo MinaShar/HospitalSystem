@@ -1,0 +1,46 @@
+﻿@{
+    Layout = null;
+}
+
+@*<div style="position:relative;width:100%;height:33px;color:#444;padding-right:1em;border-top:1px solid #aaa;background:-webkit-linear-gradient(top, #ffffff, #dcdcdc);">
+        <ul style="font-weight: bold;list-style-type: none;margin: 0;padding: 0;height:100%;">
+            <li style="border-left:0;height:100%;border-right: 1px solid #fff;border-left: 1px solid #ccc;border-bottom: 1px solid #ccc;float: left;margin: 0;vertical-align: middle;list-style-type:none;font-weight:bold;">
+                <a href="" style="padding:5px !important;text-shadow:0px 1px 0px #fff;display: block;margin: 0;padding: 0;white-space: nowrap;text-decoration: none;color: #235a81;cursor: pointer;outline: none;font-weight:bold;list-style-type:none;">
+                    compose
+                </a>
+            </li>
+        </ul>
+    </div>*@
+
+<body style="padding-top: 58px; margin-bottom: 18px;">
+    <div id="floating_menubar" style="left: 0px; top: 0px; width: 100%; margin-left: 300px; position: fixed; z-index: 99;">
+        <div class="menucontainer" id="topmenucontainer">
+            <ul class="resizable-menu" id="topmenu">
+                <li data-listitem="inbox" class="active"><a class="tabactive">&nbsp;Inbox</a></li>
+                <li data-listitem="sent"><a class="tab">&nbsp;Sent Mail</a></li>
+                <li data-listitem="compose"><a class="tab">&nbsp;Compose</a></li>
+                @*<li><a class="tab" href="server_privileges.php?db=&amp;token=c8ca6f4af18230f3f24de3b2fd7381ab&amp;viewing_mode=server"><img title=" User accounts" class="icon ic_s_rights" alt="User accounts" src="themes/dot.gif">&nbsp;User accounts</a></li>
+                    <li><a class="tab" href="server_export.php?db=&amp;token=c8ca6f4af18230f3f24de3b2fd7381ab"><img title="Export" class="icon ic_b_export" alt="Export" src="themes/dot.gif">&nbsp;Export</a></li>
+                    <li><a class="tab" href="server_import.php?db=&amp;token=c8ca6f4af18230f3f24de3b2fd7381ab"><img title=" Import" class="icon ic_b_import" alt="Import" src="themes/dot.gif">&nbsp;Import</a></li>
+                    <li><a class="tab" href="prefs_manage.php?db=&amp;token=c8ca6f4af18230f3f24de3b2fd7381ab"><img title="Settings" class="icon ic_b_tblops" alt="Settings" src="themes/dot.gif">&nbsp;Settings</a></li>
+                    <li><a class="tab" href="server_replication.php?db=&amp;token=c8ca6f4af18230f3f24de3b2fd7381ab"><img title=" Replication" class="icon ic_s_replication" alt="Replication" src="themes/dot.gif">&nbsp;Replication</a></li>
+                    <li><a class="tab" href="server_variables.php?db=&amp;token=c8ca6f4af18230f3f24de3b2fd7381ab"><img title="Variables" class="icon ic_s_vars" alt="Variables" src="themes/dot.gif">&nbsp;Variables</a></li>
+                    <li><a class="tab" href="server_collations.php?db=&amp;token=c8ca6f4af18230f3f24de3b2fd7381ab"><img title=" Charsets" class="icon ic_s_asci" alt="Charsets" src="themes/dot.gif">&nbsp;Charsets</a></li>
+                    <li><a class="tab" href="server_engines.php?db=&amp;token=c8ca6f4af18230f3f24de3b2fd7381ab"><img title="Engines" class="icon ic_b_engine" alt="Engines" src="themes/dot.gif">&nbsp;Engines</a></li>*@
+                <li class="submenu">
+                    <a class="tab nowrap" href="#"><img title="" class="icon ic_b_more" alt="" src="themes/dot.gif">More</a>
+                    <ul class="notonly"></ul>
+                </li>
+                <div class="clearfloat"></div>
+            </ul>
+        </div>
+    </div>
+</body>
+
+<body style="padding-top: 58px; margin-bottom: 18px;">
+    <div id="page_content" style="position: absolute;top: 40px;left: 293px;width: 1519.99px;">
+
+        @Html.Partial("_TableOfMailPage")
+
+    </div>
+</body>

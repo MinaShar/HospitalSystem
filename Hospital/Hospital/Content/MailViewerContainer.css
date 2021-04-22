@@ -1,0 +1,122 @@
+﻿#MailViewerContainer .group {
+			border: 1px solid #999;
+			background: #f3f3f3;
+			-moz-border-radius: 4px;
+			-webkit-border-radius: 4px;
+			border-radius: 4px;
+			-moz-box-shadow: 2px 2px 5px #ccc;
+			-webkit-box-shadow: 2px 2px 5px #ccc;
+			box-shadow: 2px 2px 5px #ccc;
+			margin-bottom: 1em;
+			padding-bottom: 1em;
+		}
+		#MailViewerContainer #main_pane_left {
+			width: 60%;
+			min-width: 260px;
+			float: left;
+			padding-top: 1em;
+		}
+
+		html {
+			font-size: 82%;
+		}
+		#MailViewerContainer h2 {
+			font-size: 2em;
+			font-weight: normal;
+			text-shadow: 0px 1px 0px #fff;
+			padding: 10px 0 10px;
+			padding-left: 3px;
+			color: #777;
+		}
+		#MailViewerContainer .group h2 {
+			background-color: #bbb;
+			padding: .1em .3em;
+			margin-top: 0px;
+			color: #fff;
+			font-size: 1.6em;
+			font-weight: normal;
+			text-shadow: 0px 1px 0px #777;
+			-moz-box-shadow: 1px 1px 15px #999 inset;
+			-webkit-box-shadow: 1px 1px 15px #999 inset;
+			box-shadow: inset 1px 1px 15px #999;
+		}
+		#MailViewerContainer ul {
+			list-style-type: disc;
+			vertical-align: middle;
+		}
+		#MailViewerContainer li.no_bullets {
+			list-style-type: none !important;
+			margin-left: -25px !important;
+			//align with other list items which have bullets: ;
+		}
+		#MailViewerContainer li {
+			margin-bottom: 0.3em;
+		}
+		#MailViewerContainer form {
+			padding: 0;
+			margin: 0;
+			display: inline;
+		}
+		#MailViewerContainer input,#MailViewerContainer select,#MailViewerContainer textarea {
+			font-size: 1em;
+		}
+		#MailViewerContainer input,#MailViewerContainer select {
+			outline: none;
+		}
+		#MailViewerContainer input[type=text],#MailViewerContainer input[type=password],#MailViewerContainer input[type=number],#MailViewerContainer input[type=date],#MailViewerContainer input[type=checkbox],#MailViewerContainer select {
+			margin: 6px;
+		}
+		#MailViewerContainer input[type=text],#MailViewerContainer input[type=password],#MailViewerContainer input[type=number],#MailViewerContainer input[type=date],#MailViewerContainer select {
+			transition: all 0.2s;
+			-ms-transition: all 0.2s;
+			-webkit-transition: all 0.2s;
+			-moz-transition: all 0.2s;
+		}
+		#MailViewerContainer select {
+			-moz-border-radius: 2px;
+			-webkit-border-radius: 2px;
+			border-radius: 2px;
+			border: 1px solid #bbb;
+			color: #333;
+			padding: 3px;
+			background: white;
+			margin: 6px;
+		}
+		#MailViewerContainer img,#MailViewerContainer button {
+			vertical-align: middle;
+		}
+		#MailViewerContainer a img {
+			border: 0;
+		}
+		#MailViewerContainer .icon {
+			margin: 0;
+			margin-left: 0.3em;
+			padding: 0 !important;
+			width: 16px;
+			height: 16px;
+			background-image: url("./themes/pmahomme/img/sprites.png?v=4.5.1") !important;
+			background-repeat: no-repeat !important;
+			background-position: top left !important;
+		}
+		#MailViewerContainer .ic_s_asci {
+			background-position: 0 -2032px !important;
+		}
+		#MailViewerContainer a,#MailViewerContainer a:link,#MailViewerContainer a:visited,#MailViewerContainer a:active,#MailViewerContainer button.mult_submit,#MailViewerContainer .checkall_box + label {
+			text-decoration: none;
+			color: #235a81;
+			cursor: pointer;
+			outline: none;
+		}
+		#MailViewerContainer .ic_b_help {
+			background-position: 0 -400px !important;
+		}
+		#MailViewerContainer .chip {
+			display: inline-block;
+			padding: 0 25px;
+			height: 50px;
+			font-size: 16px;
+			line-height: 50px;
+			border-radius: 25px;
+		    background-color: #eee;
+		    margin-bottom: 10px;
+		}

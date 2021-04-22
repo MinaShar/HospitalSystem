@@ -1,0 +1,118 @@
+﻿@using System.Data;
+@{
+    Layout = null;
+    DataTable Basicdata = (DataTable)ViewData["BasicData"];
+    DataTable Visits = (DataTable)ViewData["Visits"];
+    DataRow BasicData = Basicdata.Rows[0];
+}
+
+
+<div style="margin-top:65px;" class="well">
+    <h2 data-sr-id="3" style="visibility: visible;-webkit-transform: translateY(0) scale(1);opacity: 1;transform: translateY(0) scale(1); opacity: 1;-webkit-transition: -webkit-transform 0.8s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 0.8s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; transition: transform 0.8s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 0.8s cubic-bezier(0.6, 0.2, 0.1, 1) 0s;">
+        <span class="" style="color: rgb(152, 202, 62);">
+            Basic Data
+        </span> 
+    </h2>
+    <p>
+        <div class="row">
+            
+            <div class="col-md-9 col-lg-9">
+                <table class="table table-user-information">
+                    <tbody>
+                        <tr>
+                            <td>Full Name:</td>
+                            <td>@BasicData["Name"]</td>
+                        </tr>
+                        <tr>
+                            <td>Birth Date:</td>
+                            <td>@BasicData["Birthdate"].ToString().Split(' ')[0]</td>
+                        </tr>
+                        <tr>
+                            <td>Gender:</td>
+                            @if (bool.Parse(BasicData["IsMale"].ToString()) == true)
+                            {
+                                <td>Male</td>
+                            }
+                            else
+                            {
+                                <td>Female</td>
+                            }
+                        </tr>
+
+                        <tr>
+                            <td>Jop</td>
+                            <td>@BasicData["Jop"]</td>
+                        </tr>
+
+                        <tr>
+                            <td>Add new visit</td>
+                            <td>
+                                <button id="AddNewVisitBtn" style="padding:2px;border:1px solid rgb(152, 202, 62);">
+                                    <span class="" style="color: rgb(152, 202, 62);">Add new visit</span>
+                                </button>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+               
+            </div>
+        </div>
+    </p>
+    
+</div>
+
+
+<div class="panel-group" id="accordion">
+
+    @foreach (DataRow R in Visits.Rows)
+    {
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#id_@R["VisitID"]">@R["Date"]</a> &nbsp;&nbsp; @R["FieldName"] 
+                </h4>
+            </div>
+            <div id="id_@R["VisitID"]" class="panel-collapse collapse">
+                <div class="panel-body">
+                    @Html.Partial("SingleVisitView",new ViewDataDictionary{ { "Row", R } })
+                </div>
+            </div>
+        </div>
+    }
+
+
+    @*<div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Collapsible Group 2</a>
+            </h4>
+        </div>
+        <div id="collapse2" class="panel-collapse collapse">
+            <div class="panel-body">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </div>
+        </div>
+    </div>*@
+
+
+    @*<div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Collapsible Group 3</a>
+            </h4>
+        </div>
+        <div id="collapse3" class="panel-collapse collapse">
+            <div class="panel-body">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </div>
+        </div>
+    </div>*@
+
+
+</div> 

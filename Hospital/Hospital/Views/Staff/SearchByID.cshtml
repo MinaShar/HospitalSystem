@@ -1,0 +1,28 @@
+﻿
+@{
+    Layout = null;
+}
+
+<form style="width:1060px;" id="search_form" name="search_form" onsubmit="return false;">
+
+    <div id="custom-search-input">
+        
+        <div style="margin-top:50px;" class="input-group col-md-12">
+            <div style="display:none;color:red;" class="enter-valid-id-error-message">Please enter a valid ID.</div>
+
+            <div style="display:inline-table">
+                <input id="PatientIDSearchInpt" autocomplete="off" type="text" class="search-query form-control" placeholder="Enter Patient ID" />
+                <span class="input-group-btn" style="left: 7px;top: 3px;">
+                    <button class="btn btn-danger SearchBtn" type="button">
+                        <span class="glyphicon glyphicon-search"></span>
+                    </button>
+                </span>
+            </div>
+
+        </div>
+        <a style="margin-top: 10px; float: right;width:80px;" href="#" class="CreateNewPatientLink">Create new</a>
+    </div>
+
+</form>
+
+<div id="SearchResultsContainer" style="width:1060px;"></div>

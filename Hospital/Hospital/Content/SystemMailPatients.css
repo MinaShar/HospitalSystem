@@ -1,0 +1,307 @@
+﻿/* head nav*/
+.menucontainer {
+	:url("./themes/svg_gradient.php?from=ffffff&to=dcdcdc"): '';
+	:100% 100%: ;
+	background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#dcdcdc));
+	background: -webkit-linear-gradient(top, #ffffff, #dcdcdc);
+	:-moz-linear-gradient(top, #ffffff, #dcdcdc): '';
+	:-ms-linear-gradient(top, #ffffff, #dcdcdc): '';
+	:-o-linear-gradient(top, #ffffff, #dcdcdc): '';
+	border-top: 1px solid #aaa;
+}
+#topmenucontainer {
+	padding-right: 1em;
+	width: 100%;
+}
+body {
+	font-family: sans-serif;
+	padding: 0;
+	margin: 0;
+	margin-left: 240px;
+	color: #444;
+	background: #fff;
+}
+html {
+	font-size: 82%;
+}
+#topmenu {
+	margin-top: 0.5em;
+	padding: .1em .3em;
+}
+ul#topmenu, ul#topmenu2, ul.tabs {
+	font-weight: bold;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+ul.resizable-menu .submenu {
+	display: none;
+	position: relative;
+}
+ul#topmenu li, ul#topmenu2 li {
+	float: left;
+	margin: 0;
+	vertical-align: middle;
+}
+ul#topmenu > li {
+	border-right: 1px solid #fff;
+	border-left: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+}
+ul#topmenu > li:first-child {
+	border-left: 0;
+}
+ul#topmenu > li.active {
+	border-right: 0;
+	border-bottom-color: #fff;
+}
+.clearfloat {
+	clear: both;
+}
+.nowrap {
+	white-space: nowrap;
+}
+.tabactive {
+	background: #fff !important;
+}
+a, a:link, a:visited, a:active, button.mult_submit, .checkall_box + label {
+	text-decoration: none;
+	color: #235a81;
+	cursor: pointer;
+	outline: none;
+}
+ul.resizable-menu a, ul.resizable-menu span {
+	display: block;
+	margin: 0;
+	padding: 0;
+	white-space: nowrap;
+}
+#topmenu a {
+	text-shadow: 0px 1px 0px #fff;
+}
+ul#topmenu a, ul#topmenu span {
+	padding: .6em;
+}
+ul.resizable-menu ul {
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	list-style-type: none;
+	display: none;
+	border: 1px #ddd solid;
+	z-index: 2;
+	right: 0px;
+}
+ul#topmenu ul {
+	-moz-box-shadow: 1px 1px 6px #ddd;
+	-webkit-box-shadow: 2px 2px 3px #666;
+	box-shadow: 2px 2px 3px #666;
+}
+img, button {
+	vertical-align: middle;
+}
+a img {
+	border: 0;
+}
+.icon {
+	margin: 0;
+	margin-left: 0.3em;
+	padding: 0 !important;
+	width: 16px;
+	height: 16px;
+	background-image: url("./themes/pmahomme/img/sprites.png?v=4.5.1") !important;
+	background-repeat: no-repeat !important;
+	background-position: top left !important;
+}
+.ic_b_more {
+	background-position: 0 -560px !important;
+}
+.ic_b_engine {
+	background-position: 0 -256px !important;
+}
+.ic_s_asci {
+	background-position: 0 -2032px !important;
+}
+.ic_s_vars {
+	background-position: 0 -2528px !important;
+}
+.ic_s_replication {
+	background-position: 0 -2368px !important;
+}
+.ic_b_tblops {
+	background-position: 0 -1072px !important;
+}
+.ic_b_import {
+	background-position: 0 -432px !important;
+}
+.ic_b_export {
+	background-position: 0 -304px !important;
+}
+.ic_s_rights {
+	background-position: 0 -2384px !important;
+}
+.ic_s_status {
+	background-position: 0 -2416px !important;
+}
+.ic_b_sql {
+	background-position: 0 -960px !important;
+}
+.ic_s_db {
+	background-position: 0 -2112px !important;
+}
+#topmenu img, #topmenu2 img {
+	margin-right: 0.5em;
+	vertical-align: -3px;
+}
+ul#topmenu > li > a:hover, ul#topmenu > li > .tabactive {
+	text-decoration: none;
+}
+/* head nav*/
+
+
+/* mailing table */
+table.mailingTable {
+	border-collapse: collapse;
+}
+.data, .data_full_width {
+	margin: 0 0 12px;
+}
+form#usersForm{
+	padding: 0;
+	margin: 0;
+	display: inline;
+}
+#page_content {
+	margin: 0 .5em;
+}
+#page_content {
+	background-color: white;
+}
+body {
+	font-family: sans-serif;
+	padding: 0;
+	margin: 0;
+	margin-left: 240px;
+	color: #444;
+	background: #fff;
+}
+html {
+	font-size: 82%;
+}
+table.mailingTable tr.odd th, .odd {
+	background: #fff;
+}
+table.mailingTable tr.even th, .even {
+	background: #DFDFDF;
+}
+table.mailingTable tr.odd th, table tr.odd, table tr.even th, table tr.even {
+	text-align: left;
+}
+table.mailingTable th {
+	font-weight: bold;
+	color: #000;
+	background: #f3f3f3;
+	background-image: url("./themes/svg_gradient.php?from=ffffff&to=cccccc");
+	background-size: 100% 100%;
+	background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#cccccc));
+	background: -webkit-linear-gradient(top, #ffffff, #cccccc);
+	background: -moz-linear-gradient(top, #ffffff, #cccccc);
+	background: -ms-linear-gradient(top, #ffffff, #cccccc);
+	background: -o-linear-gradient(top, #ffffff, #cccccc);
+}
+table.mailingTable th {
+	text-align: left;
+}
+table.mailingTable caption, table th, table td {
+	padding: .3em;
+	margin: .1em;
+	vertical-align: top;
+	text-shadow: 0px 1px 0px #fff;
+}
+.center {
+	text-align: center;
+}
+table.mailingTable th.center,table.mailingTable td.center {
+	text-align: center;
+}
+#tableuserrights td, #tablespecificuserrights td, #tabledatabases td {
+	vertical-align: middle;
+}
+a, a:link, a:visited, a:active, button.mult_submit, .checkall_box + label {
+	text-decoration: none;
+	color: #235a81 !important;
+	cursor: pointer;
+	outline: none;
+}
+.nowrap {
+	white-space: nowrap;
+}
+img, button {
+	vertical-align: middle;
+}
+a img {
+	border: 0;
+}
+.icon {
+	margin: 0;
+	margin-left: 0.3em;
+	padding: 0 !important;
+	width: 16px;
+	height: 16px;
+	background-image: url("./themes/pmahomme/img/sprites.png?v=4.5.1") !important;
+	background-repeat: no-repeat !important;
+	background-position: top left !important;
+}
+.ic_b_tblexport {
+	background-position: 0 -1040px !important;
+}
+.ic_b_usredit {
+	background-position: 0 -1232px !important;
+}
+table.mailingTable td .icon {
+	margin: 0;
+}
+textarea, tt, pre, code {
+	font-family: monospace;
+}
+dfn {
+	font-style: normal;
+}
+input, select, textarea {
+	font-size: 1em;
+}
+input, select {
+	outline: none;
+}
+input[type=text], input[type=password], input[type=number], input[type=date], input[type=checkbox], select {
+	margin: 6px;
+}
+input[type='checkbox'], input[type='radio'] {
+	vertical-align: -11%;
+}
+thead th {
+	border-right: 1px solid #fff;
+}
+.ic_b_help {
+	background-position: 0 -400px !important;
+}
+.hide {
+	display: none;
+}
+#composeMailPatients .AttachFilesBtn:hover{
+    cursor:pointer;
+}
+#composeMailPatients .AttachFilesBtn:active{
+    transform:translateY(4px);
+}
+#composeMailPatients .FilesToUploadContainer ul li{
+    background-color: #f1f1f1;
+	padding: 0.01em 16px;
+	margin: 20px 0;
+	box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.16), 0px 2px 10px 0px rgba(0,0,0,0.12) !important;
+    height: auto;
+    display: inline-block;
+    margin-right:18px;
+    font-size:16px;
+}
+/* mailing table */

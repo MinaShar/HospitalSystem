@@ -1,0 +1,89 @@
+﻿
+@{
+    Layout = null;
+}
+
+@*<div class="container">
+    <div class="row centered-form" style="margin-top: 60px;">
+        <div class="">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Create new patient</h3>
+                </div>
+                <div class="panel-body">
+                    <form role="form" id="create-new-patient-frm">
+                        <div class="row">
+                            <div class="col-xs-6 col-sm-6 col-md-6" style="padding-left:8px;">
+                                <div class="form-group">
+                                    <input type="text" autocomplete="off" name="first_name" class="form-control input-sm" placeholder="First Name">
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <input type="text" autocomplete="off" name="last_name" class="form-control input-sm" placeholder="Last Name">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input autocomplete="off" style="width: 666.92px;border-left-width: 1px;margin-left: 16px;" name="id" class="form-control input-sm" placeholder="ID">
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <input autocomplete="off" name="birthdate" class="form-control input-sm" placeholder="Birthdate">
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <input autocomplete="off" name="jop" class="form-control input-sm" placeholder="Jop">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="ismale" value="1">Male
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="ismale" value="0">Female
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <input type="submit" value="Add" class="btn btn-info btn-block">
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>*@
+
+<div class="AddNewFrm" style="margin-top:50px;">
+    <form id="create-new-patient-frm">
+        <label for="fname">First Name</label>
+        <input type="text" name="first_name" autocomplete="off">
+
+        <label for="lname">Last Name</label>
+        <input type="text" name="last_name" autocomplete="off">
+
+        <label for="lname">Birthdate</label>
+        <input type="text" name="birthdate" autocomplete="off">
+
+        <label for="lname">ID</label>
+        <input type="text" name="id" autocomplete="off">
+
+        <label for="lname">Job</label>
+        <input type="text" name="jop" autocomplete="off">
+
+        <div class="form-group" style="text-align:center;">
+            <label class="radio-inline"><input type="radio" name="ismale" value="1">Male</label>
+            <label class="radio-inline"><input type="radio" name="ismale" value="0">Female</label>
+        </div>
+
+        <input type="submit" value="Save">
+    </form>
+</div>

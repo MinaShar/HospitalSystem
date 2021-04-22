@@ -1,0 +1,90 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = null;
+}
+<html>
+<head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script src="~/Scripts/AuthenticIndex.js"></script>
+
+    <link href="~/Content/AuthenticIndex.css" rel="stylesheet" />
+
+    <title>Welcome</title>
+
+    <style>
+        .bg {
+            /* The image used */
+            background-image: url("../../Images/Hospital.jpg");
+            /* Full height */
+            height: 100%;
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: absolute;
+            width: 100%;
+            z-index:-1;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="bg"></div>
+
+    <div class="container">
+        <div class="card card-container" style="background:rgba(90,90,90,0.4);">
+            <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
+            <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+            <p id="profile-name" class="profile-name-card"></p>
+            <form id="RequiredForm" class="form-signin" method="post" action="/Authentic/Login">
+                <span id="reauth-email" class="reauth-email"></span>
+                <label style="color:red;display:none;" id="ErrorMessage">All Fields are required!</label>
+                <label style="color:red;display:none;" id="ErrorCredentials">Your credentials are not right!</label>
+
+                <div class="form-group">
+                    <input name="id" type="text" id="inputID" class="required form-control" placeholder="ID" required autofocus>
+                </div>
+                <div class="form-group">
+                    <input name="password" type="password" id="inputPassword" class="required form-control" placeholder="Password" required>
+                </div>
+                @*<div class="form-group">
+                    <div id="remember" class="checkbox">
+                        <label>
+                            <input type="checkbox" value="remember-me"> Remember me
+                        </label>
+                    </div>
+               </div>*@
+
+                    <div class="form-group" style="text-align:center;">
+                        <label class="radio-inline"><input type="radio" name="type" value="1">Admin</label>
+                        <label class="radio-inline"><input type="radio" name="type" value="2">Staff</label>
+                        @*<label class="radio-inline"><input type="radio" name="optradio">Option 3</label>*@
+                    </div>
+
+
+                    <input id="SubmitFormBtn" type="submit" class="btn btn-lg btn-primary btn-block btn-signin" value="Log in" />
+                    @*<button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Log in</button>*@
+            </form><!-- /form -->
+            @*<a href="#" class="forgot-password">
+                    Forgot the password?
+                </a>*@
+        </div><!-- /card-container -->
+    </div>
+
+    <div id="ForTestingIssues"></div>
+
+</body>
+
+</html>
+

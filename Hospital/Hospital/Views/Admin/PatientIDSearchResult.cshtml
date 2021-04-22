@@ -1,0 +1,67 @@
+﻿@using System.Data;
+@{
+    Layout = null;
+    DataTable Basicdata = (DataTable)ViewData["BasicData"];
+    DataRow BasicData = Basicdata.Rows[0];
+}
+
+<div style="margin-top:65px;margin-top: 65px;width: 1482px;left: 290px;position: absolute;top: 197px;padding: 50px;box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.16), 0px 2px 10px 0px rgba(0,0,0,0.12) !important;background-color: #f1f1f1;" class="well">
+    <h2 data-sr-id="3" style="visibility: visible;-webkit-transform: translateY(0) scale(1);opacity: 1;transform: translateY(0) scale(1); opacity: 1;-webkit-transition: -webkit-transform 0.8s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 0.8s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; transition: transform 0.8s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 0.8s cubic-bezier(0.6, 0.2, 0.1, 1) 0s;">
+        <span class="" style="color: rgb(152, 202, 62);">
+            Basic Data
+        </span>
+    </h2>
+    <p>
+        <div class="row">
+
+            <div class="col-md-9 col-lg-9">
+                <table class="table table-user-information">
+                    <tbody>
+                        <tr>
+                            <td>Full Name:</td>
+                            <td>@BasicData["Name"]</td>
+                        </tr>
+                        <tr>
+                            <td>Birth Date:</td>
+                            <td>@BasicData["Birthdate"].ToString().Split(' ')[0]</td>
+                        </tr>
+                        <tr>
+                            <td>Gender:</td>
+                            @if (bool.Parse(BasicData["IsMale"].ToString()) == true)
+                            {
+                                <td>Male</td>
+                            }
+                            else
+                            {
+                                <td>Female</td>
+                            }
+                        </tr>
+
+                        <tr>
+                            <td>Jop</td>
+                            <td>@BasicData["Jop"]</td>
+                        </tr>
+
+                        <tr>
+                            <td>Add Password</td>
+                            <td>
+                                <form class="example">
+                                    <input type="hidden" name="patientid" value="@BasicData["ID"].ToString()" />
+                                    <input type="text" placeholder="Password" autocomplete="off" name="password" value="@BasicData["Password"].ToString()">
+                                    <button type="submit">
+                                        <span class="glyphicon glyphicon-repeat"></span>
+                                    </button>
+                                    <input type="submit" class="btn btn-primary" style="float: right;margin-top: 8px;width: 87px;margin-right: 0px;" value="Save" name="savepassword" />
+                                </form> 
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+
+            </div>
+        </div>
+    </p>
+
+</div>

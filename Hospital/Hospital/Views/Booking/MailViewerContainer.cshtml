@@ -1,0 +1,55 @@
+﻿@using System.Data;
+@{
+    Layout = null;
+    DataRow Row = (DataRow)ViewData["Mail"];
+    DataTable Atachements = (DataTable)ViewData["Attachements"];
+}
+
+<div id="MailViewerContainer" style="width:100%;">
+    <div id="main_pane_left" style="width:100%;padding-top:0px;">
+        <div class="group">
+            <h2>@Row["Title"]</h2>
+
+            <div class="chip">
+                @Row["Sender"]
+            </div>
+
+            @*<ul>
+                <li class="no_bullets" id="li_select_mysql_collation">
+                    <form action="index.php" method="post">
+                        <input name="token" type="hidden" value="1b71346cc8ef1e6b1b1b87ceb8590026">
+                        <label for="select_collation_connection">Server connection collation</label>
+                    </form>
+                </li>
+            </ul>*@
+
+            <div style="margin-left:25px;margin-top:4px;">@Row["Message"]</div>
+
+            @if(Atachements != null)
+            {
+                <hr />
+
+                <div style="margin-left:25px;">
+
+                    <form class="DownloadAttachements" method="get" action="/Booking/DownloadAttachements">
+                        <h5>Attachements</h5>
+
+                        <input type="hidden" name="title" value="@Row["Title"]" />
+
+                        <input type="hidden" name="mailid" value="@Row["MailID"].ToString()" />
+
+                        <ul style="list-style-type:none;">
+                            @foreach (DataRow R in Atachements.Rows)
+                            {
+                                <li data-attachementid="@R["ID"]">@R["OldName"].ToString()</li>
+                            }
+                        </ul>
+
+                        <input type="submit" value="Download All Attachemments!" data-mailid="@Row["MailID"]" class="btn btn-success" />
+                    </form>
+                </div>
+            }
+
+        </div>
+    </div>
+</div>

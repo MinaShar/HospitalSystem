@@ -1,0 +1,66 @@
+﻿@using Hospital.Models;
+@{
+    Layout = null;
+    List<Reminder> reminders = (List<Reminder>)ViewData["Reminders"];
+}
+
+<h1>Your times</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (Reminder r in reminders)
+        {
+            <tr>
+                <td style="text-align: center;vertical-align: middle;font-size:17px;">@r.Date.ToString().Split(' ')[0]</td>
+                <td style="padding: 0px;border-top-width: 0px;">
+
+
+                    @foreach (Reminder.Record rec in r.Records)
+                    {
+                        <table class="table table-nested" style="margin-bottom:0px;">
+                            <tbody>
+                                <tr>
+                                    <td class="col-xs-4 col-sm-2 active"><strong>From</strong></td>
+                                    <td>@rec.from</td>
+                                </tr>
+
+                                <tr>
+                                    <td class="col-xs-4 col-sm-2 active"><strong>To</strong></td>
+                                    <td>@rec.to</td>
+                                </tr>
+
+                                <tr style="border-bottom:1pt solid black;">
+                                    <td class="col-xs-4 col-sm-2 active"><strong>Staff</strong></td>
+                                    <td>@rec.staff</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    }
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@*@foreach (Reminder r in reminders)
+    {
+        <h2>@r.Date.ToString().Split(' ')[0]</h2>
+
+        <ul>
+
+            @foreach (Reminder.Record rec in r.Records)
+            {
+                <li>@rec.from => @rec.to with Dr. @rec.staff</li>
+            }
+
+        </ul>
+    }*@
